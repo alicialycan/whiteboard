@@ -11,3 +11,7 @@ forms the first ten entries of the fibonacci series.
 
 Example:
 fib(4) === 3
+
+## Notes
+
+Learned about memoization to cut runtime down and prevent running through each instance of the function.

@@ -1,5 +1,6 @@
 'use strict';
 
+//Run time: Exponential O(n^2) => use memoization
 function fib(n) {
   if (n<2) {
     return n;

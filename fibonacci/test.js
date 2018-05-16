@@ -1,4 +1,4 @@
-const fib = require('./index/recursiveSolution');
+const fib = require('./index/memoizationSolution');
 
 test('Fib function is defined', () => {
   expect(typeof fib).toEqual('function');

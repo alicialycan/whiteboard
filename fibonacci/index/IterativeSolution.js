@@ -1,4 +1,5 @@
 'use strict';
+//Run time: Linear O(n)
 
 function fib(n) {
 
