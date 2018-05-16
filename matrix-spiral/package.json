@@ -1,0 +1,11 @@
+{
+  "name": "matrix-spiral",
+  "version": "1.0.0",
+  "description": "## Directions",
+  "main": "solution.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
