@@ -1,25 +1,30 @@
 'use strict';
 // wrap in parseInt()
-let convertInches = (str) => {
-  if(str.includes('feet')) {
-    let feet = str.split('')[0] * 1;
-    let inches = (feet * 12) + str.split('')[2] * 1;
-    return inches;
-  }
-  return str.split('')[0] * 1;
-};
+let numBlock= (seats, row, col) => {
+  let myHeight = getHeightAt(seats, row, col);
+  let total = 0;
 
-let Block = ([seat], row, col) => {
-  let seat = seat;
-  let row = row;
-  let col = col;
-  let block = 0;
-  for(i = row; i < seat.length; i++) {
-    let person = convertInches(seat[row][col]);
-    let other = convertInches(seat[i][column]);
-    if(person > other) {
-      block = block + 1;
+  for (let i = row + 1; i < seats.length; i++) {
+    if (getHeightAt(seats, i, col) < myHeight) {
+      total++;
     }
   }
-  return block;
+
+  return total;
 };
+
+function getHeightAt(seats, row, col) {
+  let str = seats[row][col];
+  let cells = str.split(' ');
+
+  let feet = 0;
+  if (str.includes('feet')) {
+    feet = parseInt(cells[0], 10);
+  }
+
+  // inches are always the second to last thing in the split array
+  let index = cells.length - 2;
+  let inches = parseInt(cells[index], 10);
+  
+  return inches + 12 * feet;
+}
